@@ -19,6 +19,11 @@ main {
     width: 25%;
     flex-wrap:wrap
 }
-.column p {
+.column-text {
     margin-top: 10px;
+}
+
+.instruction {
+    margin-top: 5%;
+    font-size: 12px;
 }

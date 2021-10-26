@@ -6,9 +6,14 @@ app = Flask(__name__)
 
 # Defining what happens on the app ======= o ======= o ======= o =======
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template("index.html") # Flask looks for the 'template' folder and then renders the 'index.html' file found there
+    name = ''
+    if request.method == "POST" and 'username' in request.form:
+        name = request.form.get('username')
+
+    return render_template("index.html", # Flask looks for the 'template' folder and then renders the 'index.html' file found there
+                            name=name)
 
 @app.route('/login')
 def login():

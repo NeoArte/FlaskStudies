@@ -17,15 +17,24 @@
     <main>
         <div class="column">
             <h4 class="title">Introduction</h4>
-            <p>Hi! This is our first page, we hope you like our website! SZ </p>
-            <p>For now it is just a chill place, but how knows?! Maybe soon it will have something cooler.</p>
-            <p>What do you think about it? Let we know!</p>
+            <p class="column-text">Hi! This is our first page, we hope you like our website! SZ </p>
+            <p class="column-text">For now it is just a chill place, but how knows?! Maybe soon it will have something cooler.</p>
+            <p class="column-text">What do you think about it? Let we know via the form bellow:</p>
+
+            <p class="instruction">Enter your information and review of the website below:</p>
+            <form method="POST" action="/">
+                <label for="name">Name</label>
+                <input type="text" id='name' name="username"><br>
+                <p>Your name is {{name}}</p>
+                <button type="submit">SUBMIT</button>
+            </form>
         </div>
+
         <div class="column">
             <h4 class="title">What you will found here</h4>
-            <p>That website will have some experimentation with mostly Python and Flask</p>
-            <p>But you will find some with HTML and CSS, like you are already seeing right now!</p>
-            <p>This page uses display flex to have two collumns like if it were an good and old news paper.</p>
+            <p class="column-text">That website will have some experimentation with mostly Python and Flask</p>
+            <p class="column-text">But you will find some with HTML and CSS, like you are already seeing right now!</p>
+            <p class="column-text">This page uses display flex to have two collumns like if it were an good and old news paper.</p>
         </div>
     </main>
 </body>
