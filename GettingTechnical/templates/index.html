@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index in Flask Project</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
+
 <body>
-    <h1>Welcome!</h1>
-    <p>Hi! This is our first page, we hope you like our website! SZ </p>
+    <h1 class="title">Welcome!</h1>
+    <h3 class="title">Website created to learn about the Flask Framework</h3>
+    <main>
+        <div class="column">
+            <h4 class="title">Introduction</h4>
+            <p>Hi! This is our first page, we hope you like our website! SZ </p>
+            <p>For now it is just a chill place, but how knows?! Maybe soon it will have something cooler.</p>
+            <p>What do you think about it? Let we know!</p>
+        </div>
+        <div class="column">
+            <h4 class="title">What you will found here</h4>
+            <p>That website will have some experimentation with mostly Python and Flask</p>
+            <p>But you will find some with HTML and CSS, like you are already seeing right now!</p>
+            <p>This page uses display flex to have two collumns like if it were an good and old news paper.</p>
+        </div>
+    </main>
 </body>
+
 </html>

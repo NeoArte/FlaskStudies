@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+}
+
+main {
+    margin: 2% 3% 0 3%;
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+}
+
+.column {
+    width: 25%;
+    flex-wrap:wrap
+}
+.column p {
+    margin-top: 10px;
+}
