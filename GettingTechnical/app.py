@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 # Setup for the app ======= o ======= o ======= o =======
 app = Flask(__name__)
@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "That is our first page! Welcome!"
+    return render_template("index.html") # Flask looks for the 'template' folder and then renders the 'index.html' file found there
 
 @app.route('/login')
 def login():
