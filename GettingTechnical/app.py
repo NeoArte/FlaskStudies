@@ -9,11 +9,14 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     name = ''
+    food = ''
     if request.method == "POST" and 'username' in request.form:
-        name = request.form.get('username')
+        name = request.form.get('username') # Recovering a variable from POST (form) is pretty straight forward, just use get() in request.form with the var name
+        food = request.form.get('food')
 
     return render_template("index.html", # Flask looks for the 'template' folder and then renders the 'index.html' file found there
-                            name=name)
+                            name=name,
+                            food=food)
 
 @app.route('/login')
 def login():
