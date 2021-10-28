@@ -7,12 +7,23 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
+    weight = ''
+    height = ''
+
     # BMI is measured in Kg/M², the equation for it is Mass / Height^2
     if request.method == "POST":
-        mass = request.form.get('mass')
-        height = request.form.get('height')
-        print(mass, ':', type(mass))
-        #bmi = mass / (height**2)
+
+        # We must verify if somehow the user sent a field with no value ("") and if that is the case counter it.
+        if weight == '' or height == '':
+            print('weight: ', weight=='')
+            print('height: ', height=='')
+            return render_template('index.html',
+                                    missing_weight=weight == '',
+                                    missing_height=height == '')
+
+        weight = float(request.form.get('weight'))
+        height = int(request.form.get('height'))
+        bmi = weight / (height**2)
     
     return render_template('index.html')
 

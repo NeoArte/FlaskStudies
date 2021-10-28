@@ -31,27 +31,36 @@
     <div class="card-div">
       <div class="card form-card">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          
-          <div>
-            <form method="POST" action="/">
-              
-              <div class="form-floating input-group mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <span class="input-group-text" id="basic-addon2">Kg</span>
-                <label class="label-above" for="floatingInput">Your Weight Ex: 80</label>
-              </div>
-                
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-text" id="basic-addon2">@example.com</span>
+          <h5 class="card-title" style="text-align: center;">Calculator</h5>
+          <form method="POST" action="/">
+            <div>
+              <div class="mb-5">
+                <div class="form-floating input-group">
+                  <input name="weight" type="text" class="form-control" id="weightInput" placeholder="80">
+                  <span class="input-group-text" id="basic-addon2">Kg</span>
+                  <label class="label-above" for="weightInput">Your weight in kilogram Ex: 80</label>
+                </div>
+                {% if missing_weight %}
+                <label class="form-warning">You must inform your weight</label>
+                {% endif %}
               </div>
 
-            </form>
-          </div>
-          
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+              <div class="mb-5">
+                <div class="form-floating input-group">
+                  <input name="height" type="text" class="form-control" id="heightInput" placeholder="160">
+                  <span class="input-group-text" id="basic-addon2">cm</span>
+                  <label class="label-above" for="heightInput">Your height in centimeters Ex: 160</label>
+                </div>
+                {% if missing_height %}
+                <label class="form-warning">You must inform your height</label>
+                {% endif %}
+              </div>
+
+            </div>
+            
+            <p class="card-text">Click on the button below to see what is your BMI test results!</p>
+            <button type="submit" class="btn btn-primary form-button">Results</a>
+          </form>
         </div>
       </div>
     </div>
