@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+</head>
+<body>
+    <ul class="nav justify-content-center nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="calculator page" href="#">Calculator</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#1">Technologies Used</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#2">Contact</a>
+        </li>
+      </ul>
+    
+    <div class="title-div">
+      <h1>BMI Calculator</h1>
+      <h3>Write your mass and height and discover what is your BMI</h3>
+    </div>
+
+    <div class="card-div">
+      <div class="card form-card">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          
+          <div>
+            <form method="POST" action="/">
+              <input type="number">
+            </form>
+          </div>
+          
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="{{ url_for('static', filename='jss/bootstrap.bundle.min.jss') }}"></script>
+</body>
+</html>
