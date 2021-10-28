@@ -25,7 +25,7 @@
     
     <div class="title-div">
       <h1>BMI Calculator</h1>
-      <h3>Write your mass and height and discover what is your BMI</h3>
+      <h3>Write your weight and height and discover what is your BMI</h3>
     </div>
 
     <div class="card-div">
@@ -35,7 +35,18 @@
           
           <div>
             <form method="POST" action="/">
-              <input type="number">
+              
+              <div class="form-floating input-group mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <span class="input-group-text" id="basic-addon2">Kg</span>
+                <label class="label-above" for="floatingInput">Your Weight Ex: 80</label>
+              </div>
+                
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+              </div>
+
             </form>
           </div>
           
