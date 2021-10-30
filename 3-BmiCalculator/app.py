@@ -44,7 +44,7 @@ def index():
     return render_template('index.html', result_available=False)
 
 def calc_bmi(weight, height):
-    return round(weight / ((height/100)**2), 2)
+    return round(weight / ((height/100)**2), 1)
 
 
 # Running our app -------------------
