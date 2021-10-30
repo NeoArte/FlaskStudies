@@ -18,9 +18,17 @@
 
 /* Custom Card ====================================================================*/
 
+.card-container {
+    display: flex;
+    justify-content: center;
+}
+
 .card-div {
     width: 30%;
-    margin: 2% auto;
+    margin: 2% 1%;
+}
+.inform-card {
+    width: 50%;
 }
 
 .form-card {
@@ -40,4 +48,22 @@
     color: red;
     font-weight: bold;
     font-size: 0.9rem;
+}
+
+
+.result {
+    display: inline;
+}
+
+.level-blue {
+    color: blue;
+}
+.level-green {
+    color: green;
+}
+.level-yellow {
+    color: yellow
+}
+.level-red {
+    color: red;
 }

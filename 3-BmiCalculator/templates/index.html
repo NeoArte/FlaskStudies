@@ -11,60 +11,72 @@
 
 </head>
 <body>
+  <!--Navbar ---------->
+
     <ul class="nav justify-content-center nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="calculator page" href="#">Calculator</a>
+          <a class="nav-link active" aria-current="calculator page" href="/">Calculator</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#1">Technologies Used</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#2">Contact</a>
+          <a class="nav-link" href="/about">About</a>
         </li>
       </ul>
     
     <div class="title-div">
       <h1>BMI Calculator</h1>
-      <h3>Write your weight and height and discover what is your BMI</h3>
+      <h3>Write your weight and height to discover what your BMI is</h3>
     </div>
-
-    <div class="card-div">
-      <div class="card form-card">
-        <div class="card-body">
-          <h5 class="card-title" style="text-align: center;">Calculator</h5>
-          <form method="POST" action="/">
-            <div>
-              <div class="mb-5">
-                <div class="form-floating input-group">
-                  <input name="weight" type="text" class="form-control" id="weightInput" placeholder="80">
-                  <span class="input-group-text" id="basic-addon2">Kg</span>
-                  <label class="label-above" for="weightInput">Your weight in kilogram Ex: 80</label>
+  
+  
+    <!--Calculator (Main) ---------->
+    <div class="card-container">
+      <div class="card-div">
+        <div class="card form-card">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">Calculator</h5>
+            <form method="POST" action="/">
+              <div>
+                <div class="mb-5">
+                  <div class="form-floating input-group">
+                    <input name="weight" type="text" class="form-control" id="weightInput" placeholder="80">
+                    <span class="input-group-text" id="basic-addon2">Kg</span>
+                    <label class="label-above" for="weightInput">Your weight in kilogram Ex: 80</label>
+                  </div>
+                  {% if missing_weight %}
+                  <label class="form-warning">You must inform your weight</label>
+                  {% endif %}
                 </div>
-                {% if missing_weight %}
-                <label class="form-warning">You must inform your weight</label>
-                {% endif %}
-              </div>
-
-              <div class="mb-5">
-                <div class="form-floating input-group">
-                  <input name="height" type="text" class="form-control" id="heightInput" placeholder="160">
-                  <span class="input-group-text" id="basic-addon2">cm</span>
-                  <label class="label-above" for="heightInput">Your height in centimeters Ex: 160</label>
+  
+                <div class="mb-5">
+                  <div class="form-floating input-group">
+                    <input name="height" type="text" class="form-control" id="heightInput" placeholder="160">
+                    <span class="input-group-text" id="basic-addon2">cm</span>
+                    <label class="label-above" for="heightInput">Your height in centimeters Ex: 160</label>
+                  </div>
+                  {% if missing_height %}
+                  <label class="form-warning">You must inform your height</label>
+                  {% endif %}
                 </div>
-                {% if missing_height %}
-                <label class="form-warning">You must inform your height</label>
-                {% endif %}
+  
               </div>
-
-            </div>
-            
-            <p class="card-text">Click on the button below to see what is your BMI test results!</p>
-            <button type="submit" class="btn btn-primary form-button">Results</a>
-          </form>
+              
+              <p class="card-text">Click on the button below to see what is your BMI test results!</p>
+              <button type="submit" class="btn btn-primary form-button">Results</a>
+            </form>
+          </div>
         </div>
       </div>
+      {% if result_available%}
+      <div class="card-div inform-card">
+        <div class="card form-card">
+          <div class="card-body">
+              <h3 class="result">Your BMI result is: </h3>
+              <h3 class="result level-{{level}}">{{bmi}}</h3>
+          </div>
+        </div>
+      </div>
+      {% endif %}
     </div>
-    
 
     <script src="{{ url_for('static', filename='jss/bootstrap.bundle.min.jss') }}"></script>
 </body>
