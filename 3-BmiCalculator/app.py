@@ -26,14 +26,10 @@ def index():
                                     result_available=False)
 
         weight = float(weight)
-        height = int(height)/100
-        bmi = weight / (height**2)
+        height = int(height)
+        bmi = calc_bmi(weight, height)
         bmi_level = "blue" # Severe Thinness & Moderate Thinness > blue | Mild Thinness & Normal > green |
                            # Overweight & Obese I > yellow | Obese II & Obese III > red
-        bmi_explanation = \
-            '''
-            
-            '''
 
         if bmi <= 25 and bmi > 17:
             bmi_level = 'green'
@@ -43,9 +39,13 @@ def index():
             bmi_level = 'red'
         
 
-        return render_template('index.html', bmi=f"{bmi:.2f}", level=bmi_level, result_available=True)
+        return render_template('index.html', bmi=bmi, level=bmi_level, result_available=True)
     
     return render_template('index.html', result_available=False)
+
+def calc_bmi(weight, height):
+    return round(weight / ((height/100)**2), 2)
+
 
 # Running our app -------------------
 
